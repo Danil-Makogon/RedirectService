@@ -1,13 +1,20 @@
 package com.redirectserviceproject.redirectservice.service;
 
-import com.redirectserviceproject.redirectservice.model.Url;
-import org.springframework.stereotype.Service;
+import com.redirectserviceproject.redirectservice.dto.LongUrlDto;
+import com.redirectserviceproject.redirectservice.dto.ShortUrlDto;
+import com.redirectserviceproject.redirectservice.entity.Url;
+import java.util.List;
 
-@Service
-public class UrlService {
+public interface UrlService {
 
-    public String create(){
-        String url;
-        return url = "https://en.wikipedia.org/wiki/English_Wikipedia";
-    }
+    List<Url> getAllUrls();
+
+    Url createUrl(LongUrlDto longUrlDto);
+
+    Url getUrl(Long id);
+
+    void deleteUrl(Long id);
+
+    ShortUrlDto createShortUrlDto(LongUrlDto longUrlDto);
+
 }
